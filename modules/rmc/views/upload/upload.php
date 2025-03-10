@@ -30,6 +30,9 @@ $this->title = 'Upload File';
 
 $uploadUrl = Url::to(['upload/handle-upload']);
 
+$allowedExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx'];
+$allowedExtensionsJson = json_encode($allowedExtensions);
+
 $script = <<<JS
 
     $(document).ready(function () {
@@ -41,6 +44,21 @@ $script = <<<JS
         if (fileInput === 0) {
             Swal.fire({
                 title: "No file selected!",
+                icon: "error",
+                confirmButtonColor: "#f46a6a",
+                confirmButtonText: "OK"
+            });
+            return;
+        }
+
+        var file = $('#file-input')[0].files[0];
+        var fileExtension = file.name.split('.').pop().toLowerCase();
+        var allowedExtensions = $allowedExtensionsJson;
+
+        if (!allowedExtensions.includes(fileExtension)) {
+            Swal.fire({
+                title: "Invalid file type!",
+                text: "Allowed file types are: " + allowedExtensions.join(', '),
                 icon: "error",
                 confirmButtonColor: "#f46a6a",
                 confirmButtonText: "OK"
