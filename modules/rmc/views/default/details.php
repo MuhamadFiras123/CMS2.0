@@ -230,10 +230,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <!-- Add View and Download buttons -->
             <div class="row">
                 <div class="col-md-6">
-                    <button id="View" class="btn btn-info btn-sm" type="button">View Latest File</button>
+                    <button id="View" class="btn btn-info btn-sm" type="button">View</button>
                 </div>
                 <div class="col-md-6">
-                    <button id="Download" class="btn btn-primary btn-sm" type="button">Download Latest File</button>
+                    <button id="Download" class="btn btn-primary btn-sm" type="button">Download</button>
                 </div>
             </div>
         </div>
