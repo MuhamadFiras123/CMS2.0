@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php else: ?>
                         <div class="row">
                             <div class="col-md-12">
-                                <label>No research details found</label>
+                                <label>No research details found.</label>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -227,7 +227,15 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div class="card-body">
-
+            <!-- Add View and Download buttons -->
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="View" class="btn btn-info btn-sm" type="button">View Latest File</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="Download" class="btn btn-primary btn-sm" type="button">Download Latest File</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -252,6 +260,8 @@ $createexecutive = url::base() . $module . '/executive/createexecutive';
 $editexecutive = url::base() . $module . '/executive/editexecutive';
 
 $upload = url::base() . $module . '/upload/upload';
+$viewFileUrl = Url::base() . $module . '/upload/view-latest';
+$downloadFileUrl = Url::base() . $module . '/upload/download-latest';
 
 // $view = '';
 
@@ -462,6 +472,13 @@ $.ajax({
 return false;        
 });
 
+$(document).on('click', '#View', function () {
+    window.open('$viewFileUrl', '_blank');
+});
+
+$(document).on('click', '#Download', function () {
+    window.location.href = '$downloadFileUrl';
+});
 
 JS;
 $this->registerJs($script);
