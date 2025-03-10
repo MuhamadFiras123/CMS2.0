@@ -231,8 +231,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="row">
                 <div class="col-md-6">
                     <button id="View" class="btn btn-info btn-sm" type="button">View</button>
-                </div>
-                <div class="col-md-6">
                     <button id="Download" class="btn btn-primary btn-sm" type="button">Download</button>
                 </div>
             </div>
