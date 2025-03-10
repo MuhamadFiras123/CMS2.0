@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php else: ?>
                         <div class="row">
                             <div class="col-md-12">
-                                <label>No research details found.</label>
+                                <label>No research details found</label>
                             </div>
                         </div>
                     <?php endif; ?>
